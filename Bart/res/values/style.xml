@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="shadowText">
+		<item name="android:textColor">#666666</item>
+        <item name="android:shadowColor">#999999</item>
+        <item name="android:shadowDx">0.8</item>
+        <item name="android:shadowDy">0.8</item>
+        <item name="android:shadowRadius">2.1</item>
+	</style>
+	
+    <style name="pageTitle" parent="@style/shadowText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:padding">15sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:background">@drawable/bg_title_bar_80</item>
+    </style>
+    
+    <style name="mainPage_label" parent="@style/shadowText">
+    	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">100dp</item>
+		<item name="android:gravity">center_horizontal</item>
+		<item name="android:layout_marginTop">5dp</item>
+		<item name="android:textSize">16dp</item>
+    </style>
+    
+    <style name="mainPage_box">
+    	<item name="android:orientation">vertical</item>
+		<item name="android:layout_width">100dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_margin">20dp</item>
+    </style>
+    
+    <style name="mainPage_image">
+    	<item name="android:layout_width">80dp</item> 
+		<item name="android:layout_height">80dp</item>
+		<item name="android:layout_gravity">center</item>
+    </style>
+    
+    
+</resources>

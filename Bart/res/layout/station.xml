@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.kilon.android.trainride.views.StationListItemView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:padding="10dp"
+	>
+	<!-- android:layout_height="55dp"
+	android:drawSelectorOnTop="true"
+	android:background="@drawable/bg_list_55" -->
+
+	<TextView
+		android:id="@id/android:empty"
+		android:layout_width="10dp"
+		android:layout_height="wrap_content"
+
+		android:textSize="18sp"
+			
+		android:layout_alignParentRight="true"
+
+		android:textColor="#666666"
+		android:shadowColor="#999999"
+		android:shadowDx="0.8"
+		android:shadowDy="0.8"
+		android:shadowRadius="2.1"
+
+		android:singleLine="true"
+		android:ellipsize="marquee"
+		
+		android:text=">"
+	/>
+         
+	<TextView android:id="@+id/station_name"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:textSize="18sp"
+		android:textColor="#666666"
+		android:layout_toLeftOf="@id/android:empty"
+	/>
+		
+</org.kilon.android.trainride.views.StationListItemView>

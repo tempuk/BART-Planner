@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+>
+
+	<TextView
+		style="@style/pageTitle"
+		android:id="@+id/title"
+		android:text="@string/app_name"
+	/>
+		
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_margin="18dp"
+		android:layout_below="@id/title" >
+
+		<LinearLayout
+			android:id="@+id/main_trains_by_station" 
+			style="@style/mainPage_box" >
+			<ImageView
+				style="@style/mainPage_image"
+				android:src="@drawable/ic_hp_stations"
+			/>
+			<TextView 
+				style="@style/mainPage_label"
+				android:text="@string/station_list"
+			/>
+		</LinearLayout>	
+		
+		<LinearLayout
+			android:id="@+id/main_favorites" 
+			style="@style/mainPage_box"
+			android:layout_toRightOf="@id/main_trains_by_station" >
+			<ImageView
+				android:src="@drawable/ic_hp_favorites"
+				style="@style/mainPage_image"
+			/>
+			<TextView 
+				style="@style/mainPage_label"
+				android:text="@string/favorites"
+			/>
+		</LinearLayout>	
+		
+		<LinearLayout
+			android:id="@+id/trip_planner" 
+			style="@style/mainPage_box"
+			android:layout_below="@id/main_trains_by_station" >
+		
+			<ImageView
+				android:src="@drawable/ic_hp_trip_planner"
+				style="@style/mainPage_image"
+			/>
+			<TextView 
+				style="@style/mainPage_label"
+				android:text="@string/trip_planner"
+			/>
+		</LinearLayout>	
+	
+		<LinearLayout
+			android:id="@+id/station_map" 
+			style="@style/mainPage_box"
+			android:layout_below="@id/main_trains_by_station"
+			android:layout_toRightOf="@id/trip_planner" >
+			
+			<ImageView
+				android:src="@drawable/ic_hp_map"
+				style="@style/mainPage_image"
+			/>
+			
+			<TextView 
+				style="@style/mainPage_label"
+				android:text="@string/station_map"
+			/>
+		</LinearLayout>	
+	
+	
+	</RelativeLayout>
+
+</RelativeLayout>

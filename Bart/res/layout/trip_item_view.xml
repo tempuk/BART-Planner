@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.kilon.android.trainride.views.TripView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<RelativeLayout android:padding="4sp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<TextView android:id="@+id/trip_depart_time"
+			android:layout_width="50sp" 
+			android:layout_height="wrap_content"
+			android:textSize="16sp" 
+			android:text="11:32"
+			android:textStyle="bold"
+			 />
+			 
+		<RelativeLayout
+			android:layout_toRightOf="@id/trip_depart_time" 
+			android:paddingLeft="5sp"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		
+			<RelativeLayout android:id="@+id/trip_first_ride_color"
+				android:layout_width="6sp" 
+				android:layout_height="17sp"
+				android:background="#FFFF00"/>
+		
+			<TextView android:id="@+id/trip_first_ride"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textSize="15sp"
+				android:text="Fremont"
+				android:layout_toRightOf="@id/trip_first_ride_color"
+				android:paddingLeft="5sp"
+				
+				 />
+				 
+			<TextView android:id="@+id/trip_switch_station"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textSize="18sp" 
+				android:text="MacArthur"
+				android:paddingBottom="3sp"
+				android:layout_below="@id/trip_first_ride"
+				android:visibility="gone"
+				 />
+				 
+			<RelativeLayout android:id="@+id/trip_second_ride_color"
+				android:layout_width="6sp" 
+				android:layout_height="17sp"
+				android:background="#FFFF00"
+				android:layout_below="@id/trip_switch_station"
+				android:visibility="gone"
+			/>	 
+			<TextView android:id="@+id/trip_second_ride"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textSize="15sp" 
+				android:text="San Francisco Int'l Airport"
+				android:layout_below="@id/trip_switch_station"
+				android:layout_toRightOf="@id/trip_second_ride_color"
+				android:paddingLeft="5sp"
+				android:visibility="gone"
+				 />
+		
+		</RelativeLayout>
+		
+		<TextView android:id="@+id/trip_arrive_time"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:textSize="16sp" 
+			android:text="12:12"
+			android:textStyle="bold"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			 /> 
+		
+	</RelativeLayout>
+
+
+</org.kilon.android.trainride.views.TripView>

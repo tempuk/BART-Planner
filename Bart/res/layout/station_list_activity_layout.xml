@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+	<TextView
+		style="@style/pageTitle"
+		android:id="@+id/layout_title"
+		android:textSize="28dp"
+	/>
+
+	<ListView
+		android:id="@id/android:list"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/layout_title"
+	    android:layout_above="@+id/btn_favorite"
+     />
+     <!-- android:listSelector="@drawable/bg_list_55" -->
+
+</RelativeLayout>

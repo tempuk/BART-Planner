@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="3sp"
+    >
+    
+	<RelativeLayout android:id="@+id/fares"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#333333"
+	    android:padding="4sp"
+		android:layout_marginBottom="1dp"
+	>
+	    
+		<TextView android:id="@+id/fare"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="$3.90"
+			android:layout_alignParentRight="true"
+			android:textSize="14sp"
+			android:textColor="#ffff00"
+		/>
+	
+	</RelativeLayout>
+	
+	<RelativeLayout android:id="@+id/dates"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#333333"
+	    android:padding="4sp"
+		android:layout_marginBottom="1dp"
+		android:layout_below="@id/fares"
+	>
+		<TextView android:id="@+id/ride_length"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="~ 32 min"
+			android:layout_alignParentRight="true"
+			android:textSize="14sp"
+			android:textColor="#ffff00"
+		/>
+		
+		<TextView
+	    	android:id="@+id/date"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="6/12/11 3:52"
+			android:textSize="14sp"
+			android:textColor="#ffff00"
+		/>
+		
+	</RelativeLayout>
+	
+	<RelativeLayout android:id="@+id/titles" 
+		android:padding="3sp"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#333333"
+	    android:layout_below="@id/dates"
+	    >
+	    
+		<TextView android:id="@+id/origin"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="12th St. Oakland City Center"
+			android:textSize="18sp"
+			android:textColor="#ffff00"
+			android:textScaleX="0.8"
+		/>
+		
+		<TextView android:id="@+id/destination"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="San Francisco Int'l Airport"
+			android:textSize="18sp"
+			android:textScaleX="0.8"
+			android:layout_alignParentRight="true"
+			android:textColor="#ffff00"
+		/>
+		
+	</RelativeLayout>
+
+	<ListView  
+		android:id="@id/android:list"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/titles"
+		android:paddingTop="20sp"
+     />
+
+</RelativeLayout>

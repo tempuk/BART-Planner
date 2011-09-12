@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5sp"
+    >
+     
+	<Spinner 
+        android:id="@+id/spinner_depart"
+        android:layout_height="wrap_content"
+        android:layout_width="200sp"
+        android:drawSelectorOnTop="true"
+        android:prompt="@string/depart"
+    />
+    
+    <Button android:id="@+id/reverse_stations" 
+    	android:layout_height="40sp"
+    	android:layout_width="40sp"
+        android:layout_toRightOf="@id/spinner_depart"
+        android:background="@drawable/ic_refresh_button"
+     />
+    
+    <!--<Button android:id="@+id/reverse_stations"
+    	android:text="R"
+    	android:layout_height="wrap_content"
+        android:layout_width="50sp"
+        android:layout_toRightOf="@id/spinner_depart"
+    />-->
+        
+	<Spinner 
+        android:id="@+id/spinner_arrive"
+        android:layout_height="wrap_content"
+        android:layout_width="200sp"
+		android:textSize="10sp"
+        android:drawSelectorOnTop="true"
+        android:prompt="@string/arrive"
+        android:layout_below="@id/spinner_depart"
+    />
+    
+     <Button android:id="@+id/go"
+    	android:text="Go"
+    	android:layout_height="wrap_content"
+        android:layout_width="50sp"
+        android:layout_toRightOf="@id/spinner_arrive"
+        android:layout_below="@id/spinner_depart"
+    />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+Pittsburg/Bay Point - SFIA/Millbrae	PITT-SFIA	ROUTE 1	1	#ffff33
+Daly City - Dublin/Pleasanton	DALY-DUBL	ROUTE 12	12	#0099cc
+Daly City - Fremont	DALY-FRMT	ROUTE 6	6	#339933
+Dublin/Pleasanton - Daly City	DUBL-DALY	ROUTE 11	11	#0099cc
+Fremont - Daly City	FRMT-DALY	ROUTE 5	5	#339933
+Fremont - Richmond	FRMT-RICH	ROUTE 3	3	#ff9933
+Millbrae/Daly City - Richmond	MLBR-RICH	ROUTE 8	8	#ff0000
+Richmond - Fremont	RICH-FRMT	ROUTE 4	4	#ff9933
+Richmond - Daly City/Millbrae	RICH-MLBR	ROUTE 7	7	#ff0000
+Millbrae/SFIA - Pittsburg/Bay Point	SFIA-PITT	ROUTE 2	2	#ffff33

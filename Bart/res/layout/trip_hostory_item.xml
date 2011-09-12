@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.kilon.android.trainride.views.TripListView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding="10sp"
+	>
+
+
+	<RelativeLayout
+	 	android:id="@+id/trip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@id/android:empty"
+		android:layout_alignParentLeft="true"
+		
+	>
+	
+	<TextView android:id="@+id/origin"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="18sp"
+		android:singleLine="true"
+		android:ellipsize="end"
+		android:text="El Cerito PLaza"
+		/>
+		
+	<TextView android:id="@+id/destination"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="18sp"
+		android:layout_below="@id/origin"
+		android:singleLine="true"
+		android:ellipsize="end"
+		android:text="Montgomery St."
+		/>
+	
+	</RelativeLayout>
+	
+	<TextView
+		android:id="@id/android:empty"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:textSize="18sp"
+		android:gravity="center_vertical"
+		android:singleLine="false" 
+		android:text=">"
+
+	/>
+		
+		
+</org.kilon.android.trainride.views.TripListView>
