@@ -11,7 +11,6 @@ import android.app.TabActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -97,7 +96,6 @@ public class StationActivity extends TabActivity {
 
 	}
 
-	@SuppressWarnings("unused")
 	private void setUpTabs() {
 
 		TabHost.TabSpec spec;  // Resusable TabSpec for each tab
@@ -110,41 +108,19 @@ public class StationActivity extends TabActivity {
 		tabHost.getTabWidget().removeAllViews();
 
 		// Initialize a TabSpec for each tab and add it to the TabHost
-//		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
+		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
 		title = res.getString(R.string.real_time_arrivals);
-		spec = tabHost.newTabSpec(Station.REAL_TIMES).setIndicator(title).setContent(getIntent(Station.REAL_TIMES));
+		spec = tabHost.newTabSpec(Station.REAL_TIMES).setIndicator(title, drawable).setContent(getIntent(Station.REAL_TIMES));
 		tabHost.addTab(spec);
 
 //		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
-		title = res.getString(R.string.schedules);
-		spec = tabHost.newTabSpec(Station.SCHEDULES).setIndicator(title).setContent(getIntent(Station.SCHEDULES));
-		tabHost.addTab(spec);
+//		title = res.getString(R.string.schedules);
+//		spec = tabHost.newTabSpec(Station.SCHEDULES).setIndicator(title).setContent(getIntent(Station.SCHEDULES));
+//		tabHost.addTab(spec);
 
-		tabHost.setCurrentTabByTag(Station.SCHEDULES);
-		tabHost.setCurrentTabByTag(Station.REAL_TIMES);
+//		tabHost.setCurrentTabByTag(Station.SCHEDULES);
+//		tabHost.setCurrentTabByTag(Station.REAL_TIMES);
 		
-		
-		int height = 50;
-		
-		tabHost.getTabWidget().getLayoutParams().height = height;
-		tabHost.getTabWidget().setBackgroundColor(Color.BLACK);
-		
-        tabHost.getTabWidget().getChildAt(0).getLayoutParams().height = height;
-        tabHost.getTabWidget().getChildAt(1).getLayoutParams().height = height;
-        
-        
-
-
-		/*
-	    tabHost.setOnTabChangedListener( new TabHost.OnTabChangeListener() {
-			@Override
-			public void onTabChanged(String tabId) {
-				Log.w(TAG, "tabId: " + tabId);
-				Log.w(TAG, "tabId: " + tabHost.getCurrentTab());
-			}
-		});
-		 */
-
 	}
 
 	private Intent getIntent(String type) {
@@ -190,8 +166,9 @@ public class StationActivity extends TabActivity {
 			try {
 				int cacheTTL = 60;
 				Station myStation = stations[0];
-				app.getCacher().put(Station.SCHEDULES, BartRideManager.getRides(myStation), cacheTTL);
-				app.getCacher().put(Station.REAL_TIMES, BartRideManager.getRealTimeDepartures(myStation), cacheTTL);
+				String cacheKey = Station.REAL_TIMES + myStation.getId();
+//				app.getCacher().put(Station.SCHEDULES, BartRideManager.getRides(myStation), cacheTTL);
+				app.getCacher().put(cacheKey, BartRideManager.getRealTimeDepartures(myStation), cacheTTL);
 			} catch (Exception e) {
 				message = e.getMessage();
 			}

@@ -3,24 +3,13 @@ package org.kilon.android.trainride.activities;
 
 import org.kilon.android.trainride.BartActivity;
 import org.kilon.android.trainride.R;
-import org.kilon.android.trainride.model.station.Station;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 public class Main extends BartActivity {
 	
-	protected AlertDialog dialog;
-	
-	private View stationListButton;
-//	private View favoritesButton;
-	private View tripPlannerText;
-
-	protected ArrayAdapter<Station> spinnerAddapter;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,18 +20,16 @@ public class Main extends BartActivity {
 
 	private void setupViews() {
 		
-		stationListButton = findViewById(R.id.main_trains_by_station);
+		View stationListButton = findViewById(R.id.main_trains_by_station);
 		stationListButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
-				
-//				Intent intent = new Intent(Main.this, StationListActivity.class);
 				Intent intent = new Intent(Main.this, StationsTabsActivity.class);
 				startActivity(intent);
 			}
 		}
 		);
-//
-//		favoritesButton = findViewById(R.id.main_favorites);
+		
+//		View favoritesButton = findViewById(R.id.main_favorites);
 //		favoritesButton.setOnClickListener( new View.OnClickListener() {
 //			public void onClick(View v) {
 //				Intent intent = new Intent(Main.this, FavoritesActivity.class);
@@ -51,8 +38,8 @@ public class Main extends BartActivity {
 //		}
 //		);
 
-		tripPlannerText = findViewById(R.id.trip_planner);
-		tripPlannerText.setOnClickListener( new View.OnClickListener() {
+		View  tripPlannerButton = findViewById(R.id.trip_planner);
+		tripPlannerButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
 				
 				Intent intent = new Intent(Main.this, TripHistoryListActivity.class);

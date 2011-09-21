@@ -29,24 +29,14 @@ public class StationListActivity extends BartListActivity {
 
 	protected List<Station> stations;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.station_list_activity_layout);
 		
 		registerForContextMenu(getListView());
-		setActiveTitle(R.string.trains_by_station);
-
 	}
 		
-	
-	protected void setActiveTitle(int ref) {
-//		setTitle(ref);
-//		((TextView) findViewById(R.id.layout_title)).setText(ref);
-	}
-	
-	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -100,7 +90,7 @@ public class StationListActivity extends BartListActivity {
 				startActivity(intent);
 				break;
 		}
-		
+		onResume();
 		return true;
 	}
 

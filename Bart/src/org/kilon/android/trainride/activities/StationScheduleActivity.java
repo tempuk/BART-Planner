@@ -15,16 +15,13 @@ public class StationScheduleActivity extends BartListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.list_layout);
-	}
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		String cacheKey = getIntent().getExtras().getString(Station.TYPE);
+		String cacheKey = Station.REAL_TIMES + getIntent().getStringExtra(Station.ID);
 		List<RideGroup> rides = getBartApplication().getCachedRides(cacheKey);
+		
 		RideGroupAdapter adapter = new RideGroupAdapter(this,rides);
 		setListAdapter(adapter);
 	}
-
 }
