@@ -46,7 +46,7 @@ public class StationListAdapter extends BaseAdapter {
 		StationListItemView sv;
 		
 		if (null == convertView) {
-			sv = (StationListItemView)View.inflate(context, R.layout.station, null);
+			sv = (StationListItemView)View.inflate(context, R.layout.station_list_item, null);
 			
 		} else {
 			sv = (StationListItemView) convertView;

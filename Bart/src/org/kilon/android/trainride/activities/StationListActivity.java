@@ -6,6 +6,7 @@ import org.kilon.android.trainride.BartListActivity;
 import org.kilon.android.trainride.R;
 import org.kilon.android.trainride.adapters.StationListAdapter;
 import org.kilon.android.trainride.model.station.BartStation;
+import org.kilon.android.trainride.model.station.FavoriteStationManager;
 import org.kilon.android.trainride.model.station.Station;
 import org.kilon.android.trainride.model.station.StationManager;
 
@@ -28,6 +29,8 @@ public class StationListActivity extends BartListActivity {
 	private static final int CONTEXTMENU_TOGGLE_FAVORITE = 1;
 
 	protected List<Station> stations;
+
+	private String type;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,17 @@ public class StationListActivity extends BartListActivity {
 		setContentView(R.layout.station_list_activity_layout);
 		
 		registerForContextMenu(getListView());
+		
+		type = getIntent().getStringExtra(Station.TYPE);
+		if ( type == Station.ALL )
+			stations = StationManager.getInstance().getAll();
+		else
+			stations = FavoriteStationManager.getInstance().getAll();
 	}
 		
 	@Override
 	protected void onResume() {
 		super.onResume();
-		setStations();
 		setListAdapter(new StationListAdapter(this, stations));
 	}
 	
@@ -102,9 +110,5 @@ public class StationListActivity extends BartListActivity {
 		intent.putExtra(Station.ID, stations.get(position).getId());
 		startActivity(intent);
 		
-	}
-	
-	protected void setStations() {
-		stations = StationManager.getInstance().getAll();
 	}
 }

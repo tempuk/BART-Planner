@@ -21,15 +21,15 @@ public class StationsTabsActivity extends TabActivity {
 		setTitle(R.string.stations);
 		setUpTabs();
 	}
-	
+
 	@Override
 	public void setTitle(CharSequence title)  {
 		super.setTitle(title);
 		TextView titleText = (TextView) findViewById(R.id.layout_title);
 		titleText.setText(title);
 	}
-	
-	
+
+
 	private void setUpTabs() {
 
 		TabHost.TabSpec spec;  // Resusable TabSpec for each tab
@@ -38,7 +38,7 @@ public class StationsTabsActivity extends TabActivity {
 
 		Resources res = getResources(); // Resource object to get Drawables
 		final TabHost tabHost = getTabHost();  // The activity TabHost
-		
+
 		tabHost.getTabWidget().removeAllViews();
 
 		// Initialize a TabSpec for each tab and add it to the TabHost
@@ -52,11 +52,10 @@ public class StationsTabsActivity extends TabActivity {
 		spec = tabHost.newTabSpec(Station.ALL).setIndicator(title, drawable).setContent(getIntent(Station.ALL));
 		tabHost.addTab(spec);
 	}
-	
+
 	private Intent getIntent(String type) {
-		if ( type.equals(Station.ALL) ) {
-			return new Intent().setClass(this, StationListActivity.class);
-		}
-		return new Intent().setClass(this, FavoritesActivity.class);
+		Intent intent = new Intent().setClass(this, StationListActivity.class);
+		intent.putExtra(Station.TYPE, type);
+		return intent;
 	}
 }
