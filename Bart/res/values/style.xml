@@ -11,12 +11,12 @@
     <style name="pageTitle" parent="@style/shadowText">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">34sp</item>
-        <item name="android:padding">15sp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">4sp</item>
         <item name="android:singleLine">true</item>
         <item name="android:gravity">center</item>
         <item name="android:ellipsize">marquee</item>
-        <item name="android:background">@drawable/bg_title_bar_80</item>
+        <item name="android:background">@drawable/bg_title_bar_50</item>
     </style>
     
     <style name="mainPage_label" parent="@style/shadowText">
