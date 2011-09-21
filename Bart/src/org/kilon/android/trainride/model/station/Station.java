@@ -15,11 +15,14 @@ public interface Station extends Comparable<Station> {
 	public static final String REAL_TIMES = "Station.REAL_TIMES";
 	public static final String SCHEDULES = "Station.SCHEDULES";
 	
-	
 	public static final String ORIGIN = "Station.ORIGIN";
 	public static final String DESTINATION = "Station.DESTINATION";
+
 	
+	public static final String ALL = "Station.ALL";
+	public static final String FAVORITES = "Station.FAVORITES";
 	
+
 	String getId();
 	String getName();
 	Address getAddress();

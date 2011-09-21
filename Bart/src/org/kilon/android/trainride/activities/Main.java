@@ -16,7 +16,7 @@ public class Main extends BartActivity {
 	protected AlertDialog dialog;
 	
 	private View stationListButton;
-	private View favoritesButton;
+//	private View favoritesButton;
 	private View tripPlannerText;
 
 	protected ArrayAdapter<Station> spinnerAddapter;
@@ -35,20 +35,21 @@ public class Main extends BartActivity {
 		stationListButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
 				
-				Intent intent = new Intent(Main.this, StationListActivity.class);
+//				Intent intent = new Intent(Main.this, StationListActivity.class);
+				Intent intent = new Intent(Main.this, StationsTabsActivity.class);
 				startActivity(intent);
 			}
 		}
 		);
-
-		favoritesButton = findViewById(R.id.main_favorites);
-		favoritesButton.setOnClickListener( new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(Main.this, FavoritesActivity.class);
-				startActivity(intent);
-			}
-		}
-		);
+//
+//		favoritesButton = findViewById(R.id.main_favorites);
+//		favoritesButton.setOnClickListener( new View.OnClickListener() {
+//			public void onClick(View v) {
+//				Intent intent = new Intent(Main.this, FavoritesActivity.class);
+//				startActivity(intent);
+//			}
+//		}
+//		);
 
 		tripPlannerText = findViewById(R.id.trip_planner);
 		tripPlannerText.setOnClickListener( new View.OnClickListener() {

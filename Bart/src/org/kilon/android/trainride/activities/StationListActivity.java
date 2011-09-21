@@ -19,7 +19,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class StationListActivity extends BartListActivity {
 	
@@ -40,11 +39,11 @@ public class StationListActivity extends BartListActivity {
 		setActiveTitle(R.string.trains_by_station);
 
 	}
-	
+		
 	
 	protected void setActiveTitle(int ref) {
-		setTitle(ref);
-		((TextView) findViewById(R.id.layout_title)).setText(ref);
+//		setTitle(ref);
+//		((TextView) findViewById(R.id.layout_title)).setText(ref);
 	}
 	
 	

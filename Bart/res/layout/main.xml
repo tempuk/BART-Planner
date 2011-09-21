@@ -28,7 +28,7 @@
 				android:text="@string/station_list"
 			/>
 		</LinearLayout>	
-		
+		<!-- 
 		<LinearLayout
 			android:id="@+id/main_favorites" 
 			style="@style/mainPage_box"
@@ -41,7 +41,7 @@
 				style="@style/mainPage_label"
 				android:text="@string/favorites"
 			/>
-		</LinearLayout>	
+		</LinearLayout>	 -->
 		
 		<LinearLayout
 			android:id="@+id/trip_planner" 

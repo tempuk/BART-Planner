@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bart Schedule</string>
+    <string name="app_name">Bart Planner</string>
     <string name="station_list">Station List</string>
+    <string name="stations">Stations</string>
     <string name="refresh">Refresh</string>
     <string name="advisories">Advisories</string>
     <string name="trains_by_station">Bart Stations</string>
@@ -24,6 +25,7 @@
     <string name="remove">Remove</string>
     <string name="search">Search</string>
     <string name="lineup">Lineup</string>
+    <string name="all">All</string>
 
     <string name="added_to_favorites">Added To Favorites</string>
     <string name="removed_from_favorites">Removed From Favorites</string>

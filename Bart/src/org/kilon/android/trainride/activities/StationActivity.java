@@ -40,7 +40,8 @@ public class StationActivity extends TabActivity {
 		app = (BartApplication) getApplication();
 
 		if ( getIntent().hasExtra(Station.ID) ) {
-			station = StationManager.get(getIntent().getExtras().getString(Station.ID));
+			String stationId = getIntent().getExtras().getString(Station.ID);
+			station = StationManager.get(stationId);
 		}
 		
 		
