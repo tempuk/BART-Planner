@@ -14,7 +14,7 @@
 	
 		<activity
 			android:screenOrientation="portrait"
-			android:name=".activities.Main"
+			android:name=".activities.MainActivity"
 			android:label="@string/app_name"
 			android:theme="@android:style/Theme.Light">
 			<intent-filter>
@@ -23,12 +23,12 @@
 			</intent-filter>
 		</activity>
 		
-		<activity android:name=".activities.StationsTabsActivity"
+		<activity android:name=".activities.StationsActivity"
 			android:theme="@android:style/Theme.Light"
 			android:label="@string/stations"
 		/>
 		
-		<activity android:name=".activities.StationListActivity"
+		<activity android:name=".activities.StationsListActivity"
 			android:theme="@android:style/Theme.Light.NoTitleBar" 
 			android:label="@string/station_list" 
 		/>
@@ -43,7 +43,7 @@
 			android:configChanges="keyboardHidden|orientation"
 		 />
 		 
-		<activity android:name=".activities.StationScheduleActivity" 
+		<activity android:name=".activities.StationRidesActivity" 
 			android:label="@string/app_name"
 			android:theme="@android:style/Theme.Light.NoTitleBar" 
 		/>
@@ -60,7 +60,7 @@
 		 />
 		
 		<activity
-			android:name=".activities.StationMap"
+			android:name=".activities.MapActivity"
 			android:theme="@android:style/Theme.Light" 
 			android:label="@string/station_map" />
 			

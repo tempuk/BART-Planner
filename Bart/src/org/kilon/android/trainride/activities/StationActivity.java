@@ -124,7 +124,7 @@ public class StationActivity extends TabActivity {
 	}
 
 	private Intent getIntent(String type) {
-		Intent intent = new Intent().setClass(this, StationScheduleActivity.class);
+		Intent intent = new Intent().setClass(this, StationRidesActivity.class);
 		intent.putExtra(Station.ID, station.getId());
 		intent.putExtra(Station.TYPE, type);
 		return intent;

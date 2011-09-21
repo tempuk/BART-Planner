@@ -21,7 +21,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 
-public class StationListActivity extends BartListActivity {
+public class StationsListActivity extends BartListActivity {
 	
 	private static final String TAG = "StationListActivity";
 

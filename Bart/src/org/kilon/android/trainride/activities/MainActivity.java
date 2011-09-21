@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Main extends BartActivity {
+public class MainActivity extends BartActivity {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class Main extends BartActivity {
 		View stationListButton = findViewById(R.id.main_trains_by_station);
 		stationListButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(Main.this, StationsTabsActivity.class);
+				Intent intent = new Intent(MainActivity.this, StationsActivity.class);
 				startActivity(intent);
 			}
 		}
@@ -42,7 +42,7 @@ public class Main extends BartActivity {
 		tripPlannerButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
 				
-				Intent intent = new Intent(Main.this, TripHistoryListActivity.class);
+				Intent intent = new Intent(MainActivity.this, TripHistoryListActivity.class);
 				startActivity(intent);
 			}
 		}
@@ -52,7 +52,7 @@ public class Main extends BartActivity {
 		stationMapButton.setOnClickListener( new View.OnClickListener() {
 			public void onClick(View v) {
 				
-				Intent intent = new Intent(Main.this, StationMap.class);
+				Intent intent = new Intent(MainActivity.this, MapActivity.class);
 				startActivity(intent);
 				
 			}

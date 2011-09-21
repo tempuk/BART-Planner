@@ -10,7 +10,7 @@ import org.kilon.android.trainride.model.station.Station;
 
 import android.os.Bundle;
 
-public class StationScheduleActivity extends BartListActivity {
+public class StationRidesActivity extends BartListActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

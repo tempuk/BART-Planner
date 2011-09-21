@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class StationMap extends BartActivity {
+public class MapActivity extends BartActivity {
 
 	private static final String mapUrl = "http://www.bart.gov/images/global/system-map29.gif";
 	

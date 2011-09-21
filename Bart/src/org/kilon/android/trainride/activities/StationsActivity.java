@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class StationsTabsActivity extends TabActivity {
+public class StationsActivity extends TabActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class StationsTabsActivity extends TabActivity {
 	}
 
 	private Intent getIntent(String type) {
-		Intent intent = new Intent().setClass(this, StationListActivity.class);
+		Intent intent = new Intent().setClass(this, StationsListActivity.class);
 		intent.putExtra(Station.TYPE, type);
 		return intent;
 	}
