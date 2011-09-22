@@ -4,6 +4,7 @@ import org.kilon.android.trainride.BartApplication;
 import org.kilon.android.trainride.R;
 import org.kilon.android.trainride.model.ride.BartRideManager;
 import org.kilon.android.trainride.model.station.Station;
+import org.kilon.android.trainride.model.station.StationInfo;
 import org.kilon.android.trainride.model.station.StationManager;
 
 import android.app.ProgressDialog;
@@ -34,18 +35,13 @@ public class StationActivity extends TabActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.station_tab_widget);
 
-		setTitle("");
-		
 		app = (BartApplication) getApplication();
 
-		if ( getIntent().hasExtra(Station.ID) ) {
-			String stationId = getIntent().getExtras().getString(Station.ID);
-			station = StationManager.get(stationId);
-		}
-		
-		
+		String stationId = getIntent().getExtras().getString(Station.ID);
+		station = StationManager.get(stationId);
+
 		setUpViews();
-		
+
 		loadRides();
 	}
 
@@ -66,8 +62,7 @@ public class StationActivity extends TabActivity {
 	private void setUpViews() {
 
 		setTitle(station.getName());
-
-
+		
 		final int starOn = android.R.drawable.btn_star_big_on;
 		final int starOff = android.R.drawable.btn_star_big_off;
 
@@ -104,7 +99,7 @@ public class StationActivity extends TabActivity {
 
 		Resources res = getResources(); // Resource object to get Drawables
 		final TabHost tabHost = getTabHost();  // The activity TabHost
-		
+
 		tabHost.getTabWidget().removeAllViews();
 
 		// Initialize a TabSpec for each tab and add it to the TabHost
@@ -112,21 +107,36 @@ public class StationActivity extends TabActivity {
 		title = res.getString(R.string.real_time_arrivals);
 		spec = tabHost.newTabSpec(Station.REAL_TIMES).setIndicator(title, drawable).setContent(getIntent(Station.REAL_TIMES));
 		tabHost.addTab(spec);
-
-//		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
-//		title = res.getString(R.string.schedules);
-//		spec = tabHost.newTabSpec(Station.SCHEDULES).setIndicator(title).setContent(getIntent(Station.SCHEDULES));
-//		tabHost.addTab(spec);
-
-//		tabHost.setCurrentTabByTag(Station.SCHEDULES);
-//		tabHost.setCurrentTabByTag(Station.REAL_TIMES);
 		
+		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
+		title = res.getString(R.string.station_info);
+		spec = tabHost.newTabSpec(Station.INFO).setIndicator(title, drawable).setContent(getIntent(Station.INFO));
+		tabHost.addTab(spec);
+		
+		
+
+		//		drawable = res.getDrawable(R.drawable.ic_tab_schedules);
+		//		title = res.getString(R.string.schedules);
+		//		spec = tabHost.newTabSpec(Station.SCHEDULES).setIndicator(title).setContent(getIntent(Station.SCHEDULES));
+		//		tabHost.addTab(spec);
+
+		//		tabHost.setCurrentTabByTag(Station.SCHEDULES);
+		//		tabHost.setCurrentTabByTag(Station.REAL_TIMES);
+
 	}
 
 	private Intent getIntent(String type) {
-		Intent intent = new Intent().setClass(this, StationRidesActivity.class);
-		intent.putExtra(Station.ID, station.getId());
-		intent.putExtra(Station.TYPE, type);
+		Intent intent = null;
+		if ( type.equals(Station.REAL_TIMES)) {
+			intent = new Intent().setClass(this, StationRidesActivity.class);
+			intent.putExtra(Station.ID, station.getId());
+			intent.putExtra(Station.TYPE, type);
+		}
+		else if (type.equals(Station.INFO)) {
+			intent = new Intent().setClass(this, StationInfoActivity.class);
+			intent.putExtra(Station.ID, station.getId());
+			intent.putExtra(Station.TYPE, type); 
+		}
 		return intent;
 	}
 
@@ -167,8 +177,11 @@ public class StationActivity extends TabActivity {
 				int cacheTTL = 60;
 				Station myStation = stations[0];
 				String cacheKey = Station.REAL_TIMES + myStation.getId();
-//				app.getCacher().put(Station.SCHEDULES, BartRideManager.getRides(myStation), cacheTTL);
 				app.getCacher().put(cacheKey, BartRideManager.getRealTimeDepartures(myStation), cacheTTL);
+				
+				// cache intro
+				new StationInfo(myStation.getId()).getIntro();
+				
 			} catch (Exception e) {
 				message = e.getMessage();
 			}

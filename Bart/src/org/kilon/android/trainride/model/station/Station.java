@@ -20,6 +20,8 @@ public interface Station extends Comparable<Station> {
 
 	public static final String ALL = "Station.ALL";
 	public static final String FAVORITES = "Station.FAVORITES";
+	public static final String INFO = "Station.INFO";
+	
 	
 	String getId();
 	String getName();

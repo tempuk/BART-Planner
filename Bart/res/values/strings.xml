@@ -26,7 +26,7 @@
     <string name="search">Search</string>
     <string name="lineup">Lineup</string>
     <string name="all">All</string>
-
+    <string name="station_info">Station Info</string>
     <string name="added_to_favorites">Added To Favorites</string>
     <string name="removed_from_favorites">Removed From Favorites</string>
     

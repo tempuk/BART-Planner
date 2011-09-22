@@ -18,7 +18,11 @@ public class StationRidesActivity extends BartListActivity {
 		
 		setContentView(R.layout.list_layout);
 
-		String cacheKey = Station.REAL_TIMES + getIntent().getStringExtra(Station.ID);
+		String stationId = getIntent().getStringExtra(Station.ID);
+		String type = getIntent().getStringExtra(Station.TYPE);
+		
+		String cacheKey = type + stationId;
+		
 		List<RideGroup> rides = getBartApplication().getCachedRides(cacheKey);
 		
 		RideGroupAdapter adapter = new RideGroupAdapter(this,rides);
