@@ -180,7 +180,7 @@ public class StationActivity extends TabActivity {
 				app.getCacher().put(cacheKey, BartRideManager.getRealTimeDepartures(myStation), cacheTTL);
 				
 				// cache intro
-				new StationInfo(myStation.getId()).getIntro();
+				new StationInfo(myStation.getId(), (BartApplication) getApplication()).getIntro();
 				
 			} catch (Exception e) {
 				message = e.getMessage();
