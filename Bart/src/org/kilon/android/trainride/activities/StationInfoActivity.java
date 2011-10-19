@@ -36,7 +36,7 @@ public class StationInfoActivity extends BartActivity {
 		);
 		
 		TextView info = (TextView) findViewById(R.id.station_info);
-		info.setText( new StationInfo(stationId).getIntro() );
+		info.setText( new StationInfo(stationId, getBartApplication()).getIntro() );
 	}
 	
 	private String getFormattedAddress() {

@@ -27,6 +27,11 @@ public class Cacher<T> {
 	public String getId() {
 		return cacherId;
 	}
+	
+	
+	public boolean has(String cacheKey) {
+		return cache.containsKey(cacheKey);
+	}
 
 	/**
 	 * Retrieve an object from cache
@@ -36,7 +41,7 @@ public class Cacher<T> {
 	 */
 	public T get(String cacheKey) {
 
-		if ( ! cache.containsKey(cacheKey) ) {
+		if ( ! has(cacheKey) ) {
 			Log.d(TAG, getId() + " :: cache is empty: " + cacheKey);
 			return null;
 		}
